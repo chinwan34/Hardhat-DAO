@@ -19,6 +19,7 @@ async function main(proposalIndex: number) {
         reason
     );
     await voteTxResponse.wait(1);
+    await moveBlocks(VOTING_DELAY + 1);
     if (developmentChains.includes(network.name)) {
         await moveBlocks(VOTING_DELAY + 1);
     }
